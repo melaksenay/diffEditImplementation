@@ -15,3 +15,8 @@ Target Image: zebra
 ![image](https://github.com/user-attachments/assets/f17ab882-da69-4664-9669-51374289258c)
 ![image](https://github.com/user-attachments/assets/a50bf4d7-6b0c-44e6-abe5-d6464d5e1c69)
 
+If you're facing problems implementing it yourself:
+
+For some time, I was getting the same image back, and that was because of a small oversight in my "generate_diff_edit_with_embs" function:
+I was treating the denoising process as I would in standard stable diffusion : initializing latents sampled from a random distribution, when I should have used the latents that were noised in step 2.
+
